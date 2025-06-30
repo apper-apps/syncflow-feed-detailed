@@ -1,0 +1,59 @@
+{
+  "workspaceData": [
+    {
+      "Id": "1",
+      "name": "Production Workspace",
+      "description": "Main production environment for live data pipelines",
+      "organizationId": "org_123",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "status": "active",
+      "connectionCount": 12,
+      "sourceCount": 8,
+      "destinationCount": 6
+    },
+    {
+      "Id": "2",
+      "name": "Analytics Workspace",
+      "description": "Dedicated workspace for analytics and reporting pipelines",
+      "organizationId": "org_123",
+      "createdAt": "2024-01-05T00:00:00Z",
+      "status": "active",
+      "connectionCount": 8,
+      "sourceCount": 5,
+      "destinationCount": 4
+    },
+    {
+      "Id": "3",
+      "name": "E-commerce Workspace",
+      "description": "E-commerce specific data integrations and inventory management",
+      "organizationId": "org_123",
+      "createdAt": "2024-01-10T00:00:00Z",
+      "status": "active",
+      "connectionCount": 6,
+      "sourceCount": 4,
+      "destinationCount": 3
+    },
+    {
+      "Id": "4",
+      "name": "Development Workspace",
+      "description": "Testing and development environment for new integrations",
+      "organizationId": "org_123",
+      "createdAt": "2024-01-15T00:00:00Z",
+      "status": "active",
+      "connectionCount": 4,
+      "sourceCount": 3,
+      "destinationCount": 2
+    },
+    {
+      "Id": "5",
+      "name": "Staging Workspace",
+      "description": "Pre-production environment for validation and testing",
+      "organizationId": "org_123",
+      "createdAt": "2024-01-20T00:00:00Z",
+      "status": "active",
+      "connectionCount": 3,
+      "sourceCount": 2,
+      "destinationCount": 2
+    }
+  ]
+}

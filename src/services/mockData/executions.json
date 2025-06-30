@@ -1,0 +1,175 @@
+{
+  "executionData": [
+    {
+      "Id": 1,
+      "taskId": 1,
+      "taskName": "Daily Customer Data Sync",
+      "startTime": "2024-01-25T00:00:00Z",
+      "endTime": "2024-01-25T00:12:34Z",
+      "status": "success",
+      "duration": "12m 34s",
+      "connectionCount": 2,
+      "logs": [
+        "Starting sync execution...",
+        "Connected to PostgreSQL source",
+        "Connected to Snowflake destination",
+        "Syncing 12,450 records...",
+        "Sync completed successfully"
+      ]
+    },
+    {
+      "Id": 2,
+      "taskId": 2,
+      "taskName": "Hourly Analytics Refresh",
+      "startTime": "2024-01-25T14:00:00Z",
+      "endTime": "2024-01-25T14:05:22Z",
+      "status": "success",
+      "duration": "5m 22s",
+      "connectionCount": 1,
+      "logs": [
+        "Starting analytics refresh...",
+        "Connected to MongoDB source",
+        "Processing events...",
+        "Updated 3,247 records",
+        "Refresh completed"
+      ]
+    },
+    {
+      "Id": 3,
+      "taskId": 1,
+      "taskName": "Daily Customer Data Sync",
+      "startTime": "2024-01-24T00:00:00Z",
+      "endTime": "2024-01-24T00:15:18Z",
+      "status": "success",
+      "duration": "15m 18s",
+      "connectionCount": 2,
+      "logs": [
+        "Starting sync execution...",
+        "Connected to PostgreSQL source",
+        "Connected to Snowflake destination",
+        "Syncing 13,892 records...",
+        "Sync completed successfully"
+      ]
+    },
+    {
+      "Id": 4,
+      "taskId": 3,
+      "taskName": "Weekly Sales Report",
+      "startTime": "2024-01-21T00:00:00Z",
+      "endTime": "2024-01-21T00:28:45Z",
+      "status": "success",
+      "duration": "28m 45s",
+      "connectionCount": 2,
+      "logs": [
+        "Starting weekly report sync...",
+        "Connected to Salesforce",
+        "Extracting sales data...",
+        "Processing 45,321 records",
+        "Loading to Redshift...",
+        "Report generation completed"
+      ]
+    },
+    {
+      "Id": 5,
+      "taskId": 6,
+      "taskName": "Inventory Sync",
+      "startTime": "2024-01-25T08:00:00Z",
+      "endTime": "2024-01-25T08:03:12Z",
+      "status": "failed",
+      "duration": "3m 12s",
+      "connectionCount": 2,
+      "logs": [
+        "Starting inventory sync...",
+        "Connected to WMS System",
+        "ERROR: Connection timeout to E-commerce DB",
+        "Retrying connection...",
+        "ERROR: Failed to establish connection",
+        "Sync failed"
+      ]
+    },
+    {
+      "Id": 6,
+      "taskId": 2,
+      "taskName": "Hourly Analytics Refresh",
+      "startTime": "2024-01-25T13:00:00Z",
+      "endTime": "2024-01-25T13:04:56Z",
+      "status": "success",
+      "duration": "4m 56s",
+      "connectionCount": 1,
+      "logs": [
+        "Starting analytics refresh...",
+        "Connected to MongoDB source",
+        "Processing events...",
+        "Updated 2,983 records",
+        "Refresh completed"
+      ]
+    },
+    {
+      "Id": 7,
+      "taskId": 5,
+      "taskName": "Customer Support Metrics",
+      "startTime": "2024-01-25T06:00:00Z",
+      "endTime": "2024-01-25T06:08:33Z",
+      "status": "success",
+      "duration": "8m 33s",
+      "connectionCount": 1,
+      "logs": [
+        "Starting support metrics sync...",
+        "Connected to Zendesk",
+        "Fetching ticket data...",
+        "Processing 1,247 tickets",
+        "Loading to analytics database...",
+        "Metrics sync completed"
+      ]
+    },
+    {
+      "Id": 8,
+      "taskId": 4,
+      "taskName": "Event Streaming Pipeline",
+      "startTime": "2024-01-23T15:30:00Z",
+      "endTime": "2024-01-23T15:32:15Z",
+      "status": "success",
+      "duration": "2m 15s",
+      "connectionCount": 1,
+      "logs": [
+        "Starting event stream sync...",
+        "Connected to Kafka",
+        "Processing event stream...",
+        "Indexed 5,432 events",
+        "Stream processing completed"
+      ]
+    },
+    {
+      "Id": 9,
+      "taskId": 1,
+      "taskName": "Daily Customer Data Sync",
+      "startTime": "2024-01-23T00:00:00Z",
+      "endTime": "2024-01-23T00:11:22Z",
+      "status": "success",
+      "duration": "11m 22s",
+      "connectionCount": 2,
+      "logs": [
+        "Starting sync execution...",
+        "Connected to PostgreSQL source",
+        "Connected to Snowflake destination",
+        "Syncing 11,234 records...",
+        "Sync completed successfully"
+      ]
+    },
+    {
+      "Id": 10,
+      "taskId": 2,
+      "taskName": "Hourly Analytics Refresh",
+      "startTime": "2024-01-25T12:00:00Z",
+      "endTime": null,
+      "status": "running",
+      "duration": null,
+      "connectionCount": 1,
+      "logs": [
+        "Starting analytics refresh...",
+        "Connected to MongoDB source",
+        "Processing events..."
+      ]
+    }
+  ]
+}

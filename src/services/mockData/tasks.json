@@ -1,0 +1,162 @@
+{
+  "taskData": [
+    {
+      "Id": 1,
+      "name": "Daily Customer Data Sync",
+      "description": "Synchronize customer data from PostgreSQL to Snowflake every day at midnight",
+      "workspaceId": "1",
+      "workspaceName": "Production Workspace",
+      "cronSchedule": "0 0 * * *",
+      "webhookUrl": "https://api.example.com/webhooks/sync-complete",
+      "webhookHeaders": {
+        "Authorization": "Bearer token123",
+        "Content-Type": "application/json"
+      },
+      "status": "enabled",
+      "createdAt": "2024-01-15T08:00:00Z",
+      "updatedAt": "2024-01-20T14:30:00Z",
+      "lastRun": "2024-01-25T00:00:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_1",
+          "connectionName": "PostgreSQL to Snowflake",
+          "sourceName": "Production PostgreSQL",
+          "destinationName": "Snowflake DW"
+        },
+        {
+          "connectionId": "conn_2",
+          "connectionName": "Users Table Sync",
+          "sourceName": "User Database",
+          "destinationName": "Analytics DB"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "name": "Hourly Analytics Refresh",
+      "description": "Update analytics dashboard with fresh data from multiple sources",
+      "workspaceId": "1",
+      "workspaceName": "Production Workspace",
+      "cronSchedule": "0 * * * *",
+      "webhookUrl": "https://hooks.slack.com/services/analytics-team",
+      "webhookHeaders": {},
+      "status": "running",
+      "createdAt": "2024-01-18T10:15:00Z",
+      "updatedAt": "2024-01-25T09:45:00Z",
+      "lastRun": "2024-01-25T14:00:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_3",
+          "connectionName": "Analytics Pipeline",
+          "sourceName": "MongoDB Events",
+          "destinationName": "BigQuery"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "name": "Weekly Sales Report",
+      "description": "Generate weekly sales reports by syncing data from CRM to data warehouse",
+      "workspaceId": "2",
+      "workspaceName": "Analytics Workspace",
+      "cronSchedule": "0 0 * * 0",
+      "webhookUrl": "",
+      "webhookHeaders": {},
+      "status": "enabled",
+      "createdAt": "2024-01-10T16:20:00Z",
+      "updatedAt": "2024-01-22T11:10:00Z",
+      "lastRun": "2024-01-21T00:00:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_4",
+          "connectionName": "CRM to Warehouse",
+          "sourceName": "Salesforce",
+          "destinationName": "Redshift"
+        },
+        {
+          "connectionId": "conn_5",
+          "connectionName": "Product Data Sync",
+          "sourceName": "Product API",
+          "destinationName": "Data Lake"
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "name": "Event Streaming Pipeline",
+      "description": "Real-time event data processing and synchronization",
+      "workspaceId": "1",
+      "workspaceName": "Production Workspace",
+      "cronSchedule": "*/15 * * * *",
+      "webhookUrl": "https://api.monitoring.com/alerts",
+      "webhookHeaders": {
+        "X-API-Key": "monitoring_key_456"
+      },
+      "status": "disabled",
+      "createdAt": "2024-01-12T09:30:00Z",
+      "updatedAt": "2024-01-24T16:45:00Z",
+      "lastRun": "2024-01-23T15:30:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_6",
+          "connectionName": "Event Stream",
+          "sourceName": "Kafka Events",
+          "destinationName": "Elasticsearch"
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "name": "Customer Support Metrics",
+      "description": "Daily sync of support ticket data for metrics and reporting",
+      "workspaceId": "2",
+      "workspaceName": "Analytics Workspace",
+      "cronSchedule": "0 6 * * *",
+      "webhookUrl": "https://dashboard.company.com/api/refresh",
+      "webhookHeaders": {
+        "Authorization": "Bearer dashboard_token",
+        "Content-Type": "application/json"
+      },
+      "status": "enabled",
+      "createdAt": "2024-01-14T13:45:00Z",
+      "updatedAt": "2024-01-25T08:20:00Z",
+      "lastRun": "2024-01-25T06:00:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_7",
+          "connectionName": "Support Tickets",
+          "sourceName": "Zendesk",
+          "destinationName": "PostgreSQL Analytics"
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "name": "Inventory Sync",
+      "description": "Synchronize inventory levels across multiple systems",
+      "workspaceId": "3",
+      "workspaceName": "E-commerce Workspace",
+      "cronSchedule": "0 */4 * * *",
+      "webhookUrl": "",
+      "webhookHeaders": {},
+      "status": "failed",
+      "createdAt": "2024-01-16T11:00:00Z",
+      "updatedAt": "2024-01-25T12:15:00Z",
+      "lastRun": "2024-01-25T08:00:00Z",
+      "connections": [
+        {
+          "connectionId": "conn_8",
+          "connectionName": "Inventory Management",
+          "sourceName": "WMS System",
+          "destinationName": "E-commerce DB"
+        },
+        {
+          "connectionId": "conn_9",
+          "connectionName": "Stock Levels",
+          "sourceName": "POS System",
+          "destinationName": "Inventory DB"
+        }
+      ]
+    }
+  ]
+}
