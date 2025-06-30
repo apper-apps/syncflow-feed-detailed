@@ -64,6 +64,35 @@ export const taskService = {
     // Update task status to running
     task.status = 'running';
     task.lastRun = new Date().toISOString();
-    return { success: true };
+return { success: true };
+  },
+
+  async runMultipleTasks(taskIds) {
+    await delay(600);
+    const results = [];
+    
+    // Use Promise.all for parallel execution
+    const promises = taskIds.map(async (taskId) => {
+      try {
+        const task = taskData.find(t => t.Id === taskId);
+        if (!task) {
+          return { taskId, success: false, error: 'Task not found' };
+        }
+        
+        // Simulate parallel execution
+        await delay(Math.random() * 200 + 100); // Random delay 100-300ms
+        
+        // Update task status to running
+        task.status = 'running';
+        task.lastRun = new Date().toISOString();
+        
+        return { taskId, success: true };
+      } catch (error) {
+        return { taskId, success: false, error: error.message };
+      }
+    });
+    
+    const results = await Promise.all(promises);
+    return results;
   }
 };

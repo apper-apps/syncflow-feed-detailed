@@ -50,8 +50,25 @@ const Dashboard = () => {
     } catch (err) {
       toast.error('Failed to start task execution');
     }
-  };
+};
 
+  const handleRunMultipleTasks = async (taskIds) => {
+    try {
+      toast.info(`Starting ${taskIds.length} tasks in parallel...`);
+      const results = await taskService.runMultipleTasks(taskIds);
+      const successful = results.filter(r => r.success).length;
+      const failed = results.filter(r => !r.success).length;
+      
+      if (failed === 0) {
+        toast.success(`All ${successful} tasks started successfully`);
+      } else {
+        toast.warning(`${successful} tasks started, ${failed} failed`);
+      }
+      loadDashboardData();
+    } catch (err) {
+      toast.error('Failed to start parallel task execution');
+    }
+  };
   const handleToggleTask = async (taskId) => {
     try {
       const task = tasks.find(t => t.Id === taskId);
@@ -245,12 +262,14 @@ const Dashboard = () => {
                         </span>
                       </div>
                     </div>
-                    <QuickActions
+<QuickActions
                       task={task}
                       onRun={handleRunTask}
+                      onRunMultiple={handleRunMultipleTasks}
                       onToggle={handleToggleTask}
                       onEdit={(id) => window.location.href = `/tasks/${id}`}
                       onDelete={handleDeleteTask}
+                      enableParallel={false}
                     />
                   </motion.div>
                 ))}

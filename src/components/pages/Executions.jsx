@@ -117,8 +117,8 @@ const Executions = () => {
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+{/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
         <Card className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <div className="flex items-center">
             <div className="flex-shrink-0">
@@ -176,6 +176,22 @@ const Executions = () => {
               <p className="text-sm font-medium text-yellow-600">Running</p>
               <p className="text-2xl font-bold text-yellow-900">
                 {executions.filter(e => e.status === 'running').length}
+              </p>
+            </div>
+          </div>
+</Card>
+
+        <Card className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                <ApperIcon name="PlayCircle" className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <div className="ml-4">
+              <p className="text-sm font-medium text-purple-600">Parallel</p>
+              <p className="text-2xl font-bold text-purple-900">
+                {executions.filter(e => e.parallelExecution).length}
               </p>
             </div>
           </div>

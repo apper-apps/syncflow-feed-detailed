@@ -95,8 +95,25 @@ const Tasks = () => {
         toast.error('Failed to delete task');
       }
     }
-  };
+};
 
+  const handleRunMultipleTasks = async (taskIds) => {
+    try {
+      toast.info(`Starting ${taskIds.length} tasks in parallel...`);
+      const results = await taskService.runMultipleTasks(taskIds);
+      const successful = results.filter(r => r.success).length;
+      const failed = results.filter(r => !r.success).length;
+      
+      if (failed === 0) {
+        toast.success(`All ${successful} tasks started successfully`);
+      } else {
+        toast.warning(`${successful} tasks started, ${failed} failed`);
+      }
+      loadTasks();
+    } catch (err) {
+      toast.error('Failed to start parallel task execution');
+    }
+  };
   const handleBulkAction = async (action) => {
     if (selectedTasks.length === 0) {
       toast.warning('Please select tasks to perform bulk action');
@@ -184,11 +201,20 @@ const Tasks = () => {
             </select>
           </div>
 
-          {selectedTasks.length > 0 && (
+{selectedTasks.length > 0 && (
             <div className="flex items-center space-x-2">
               <Badge variant="info" className="mr-2">
                 {selectedTasks.length} selected
               </Badge>
+              <Button
+                variant="ghost"
+                size="small"
+                icon="PlayCircle"
+                onClick={() => handleRunMultipleTasks(selectedTasks)}
+                className="text-purple-600 hover:text-purple-700"
+              >
+                Run Selected
+              </Button>
               <Button
                 variant="ghost"
                 size="small"
@@ -321,3 +347,13 @@ const Tasks = () => {
 };
 
 export default Tasks;
+<QuickActions
+                      task={task}
+                      onRun={handleRunTask}
+                      onRunMultiple={handleRunMultipleTasks}
+                      onToggle={handleToggleTask}
+                      onEdit={(id) => window.location.href = `/tasks/${id}`}
+                      onDelete={handleDeleteTask}
+                      enableParallel={true}
+                      selectedTasks={selectedTasks}
+                    />

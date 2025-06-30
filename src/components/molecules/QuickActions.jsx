@@ -2,9 +2,9 @@ import React from 'react';
 import Button from '@/components/atoms/Button';
 import ApperIcon from '@/components/ApperIcon';
 
-const QuickActions = ({ task, onRun, onToggle, onEdit, onDelete }) => {
+const QuickActions = ({ task, onRun, onRunMultiple, onToggle, onEdit, onDelete, enableParallel = false, selectedTasks = [] }) => {
   return (
-    <div className="flex items-center space-x-2">
+<div className="flex items-center space-x-2">
       <Button
         variant="ghost"
         size="small"
@@ -13,6 +13,16 @@ const QuickActions = ({ task, onRun, onToggle, onEdit, onDelete }) => {
         className="text-green-600 hover:text-green-700 hover:bg-green-50"
         title="Run now"
       />
+      {enableParallel && selectedTasks.length > 1 && (
+        <Button
+          variant="ghost"
+          size="small"
+          icon="PlayCircle"
+          onClick={() => onRunMultiple(selectedTasks)}
+          className="text-purple-600 hover:text-purple-700 hover:bg-purple-50"
+          title="Run selected tasks in parallel"
+        />
+      )}
       <Button
         variant="ghost"
         size="small"

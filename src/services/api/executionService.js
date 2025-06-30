@@ -44,7 +44,28 @@ export const executionService = {
     executionData[index] = {
       ...executionData[index],
       ...updates
-    };
+};
     return { ...executionData[index] };
+  },
+
+  async createMultiple(executionsData) {
+    await delay(500);
+    const newExecutions = [];
+    let currentMaxId = Math.max(...executionData.map(e => e.Id));
+    
+    for (const execData of executionsData) {
+      currentMaxId += 1;
+      const newExecution = {
+        ...execData,
+        Id: currentMaxId,
+        startTime: new Date().toISOString(),
+        status: 'running',
+        parallelExecution: true
+      };
+      executionData.push(newExecution);
+      newExecutions.push({ ...newExecution });
+    }
+    
+    return newExecutions;
   }
 };
