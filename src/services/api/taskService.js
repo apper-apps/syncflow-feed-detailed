@@ -67,9 +67,8 @@ export const taskService = {
 return { success: true };
   },
 
-  async runMultipleTasks(taskIds) {
+async runMultipleTasks(taskIds) {
     await delay(600);
-    const results = [];
     
     // Use Promise.all for parallel execution
     const promises = taskIds.map(async (taskId) => {
