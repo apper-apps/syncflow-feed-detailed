@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Card from '@/components/atoms/Card';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import SearchBar from '@/components/molecules/SearchBar';
-import StatusIndicator from '@/components/molecules/StatusIndicator';
-import QuickActions from '@/components/molecules/QuickActions';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import Empty from '@/components/ui/Empty';
-import ApperIcon from '@/components/ApperIcon';
-import { taskService } from '@/services/api/taskService';
-import { toast } from 'react-toastify';
-import { format } from 'date-fns';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import { format } from "date-fns";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Card from "@/components/atoms/Card";
+import Button from "@/components/atoms/Button";
+import QuickActions from "@/components/molecules/QuickActions";
+import SearchBar from "@/components/molecules/SearchBar";
+import StatusIndicator from "@/components/molecules/StatusIndicator";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import { taskService } from "@/services/api/taskService";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -347,13 +347,3 @@ const Tasks = () => {
 };
 
 export default Tasks;
-<QuickActions
-                      task={task}
-                      onRun={handleRunTask}
-                      onRunMultiple={handleRunMultipleTasks}
-                      onToggle={handleToggleTask}
-                      onEdit={(id) => window.location.href = `/tasks/${id}`}
-                      onDelete={handleDeleteTask}
-                      enableParallel={true}
-                      selectedTasks={selectedTasks}
-                    />
